@@ -1,0 +1,66 @@
+#!/bin/bash 
+# init script for mongodb 
+# chkconfig: 2345 70 11 
+# description: mongod 
+# processname: mongod 
+# pidfile: /var/run/mongodb.pid
+
+# Source function library. 
+. /etc/rc.d/init.d/functions
+
+retval=0 
+pidfile=/var/run/mongodb.pid 
+exec="/usr/local/bin/mongod" 
+prog="mongod" 
+config="/etc/mongodb.conf" 
+lockfile="/var/lock/mongod"
+
+[ -e $config ] && . $config
+
+start() { 
+  if [ ! -x $exec ] 
+  then 
+    echo \$exec not found 
+    exit 5 
+  fi
+
+  echo -n $"Starting $prog: "
+
+    nohup $exec -f $config run 2>&1 & 
+    retval=$? 
+    echo 
+    [ $retval = 0 ] && touch ${lockfile} 
+    return $retval
+
+}
+
+stop() {
+  echo -n $"Stopping $prog: " 
+  killproc $prog 
+  RETVAL=$? 
+  echo 
+  [ $RETVAL = 0 ] && rm -f $lockfile $pidfile
+}
+
+restart() { 
+  stop 
+  start 
+}
+
+# See how we were called. 
+case "$1" in 
+start) 
+start 
+;; 
+stop) 
+stop 
+;; 
+restart) 
+stop 
+sleep 1 
+start 
+;; 
+*) 
+echo $"Usage: `basename $0` {start|stop|restart|status}" 
+exit 2 
+esac
