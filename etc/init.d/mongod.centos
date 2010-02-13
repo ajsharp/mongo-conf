@@ -26,7 +26,7 @@ start() {
 
   echo -n $"Starting $prog: "
 
-  daemon $exec --fork --logpath=/var/log/mongodb --logappend -f $config
+  daemon $exec --fork --logpath=/var/log/mongodb/mongod.log --logappend -f $config
   RETVAL=$? 
   echo 
   [ $RETVAL = 0 ] && touch ${lockfile} 
