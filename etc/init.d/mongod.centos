@@ -8,7 +8,7 @@
 # Source function library. 
 . /etc/rc.d/init.d/functions
 
-retval=0 
+RETVAL=0 
 pidfile=/var/run/mongodb.pid 
 exec="/usr/local/bin/mongod" 
 prog="mongod" 
@@ -49,18 +49,21 @@ restart() {
 
 # See how we were called. 
 case "$1" in 
-start) 
-start 
-;; 
-stop) 
-stop 
-;; 
-restart) 
-stop 
-sleep 1 
-start 
-;; 
+  start) 
+    start 
+  ;; 
+  stop) 
+    stop 
+  ;; 
+  restart) 
+    stop 
+    sleep 1 
+    start 
+  ;; 
 *) 
+
 echo $"Usage: `basename $0` {start|stop|restart|status}" 
 exit 2 
 esac
+
+exit $RETVAL
