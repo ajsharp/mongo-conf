@@ -26,11 +26,11 @@ start() {
 
   echo -n $"Starting $prog: "
 
-    nohup $exec -f $config run 2>&1 & 
-    retval=$? 
-    echo 
-    [ $retval = 0 ] && touch ${lockfile} 
-    return $retval
+  daemon $exec --fork --logpath=/var/log/mongodb -f $config
+  RETVAL=$? 
+  echo 
+  [ $RETVAL = 0 ] && touch ${lockfile} 
+  return $RETVAL
 
 }
 
