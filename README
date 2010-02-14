@@ -1,1 +1,33 @@
+DESCRIPTION
+===========
 Simple collection of scripts for configuring, installing, and running mongo db.
+
+
+USAGE
+=====
+On your remote box running Red Hat Enterprise Linux or CentOS, simply copy 
+etc/init.d/mongod.centos to /etc/init.d/mongod on your remote box.
+
+Also, copy ./etc/mongodb.conf to /etc/mongodb.conf. You can add any command
+line options here, rather than modifying the init script.
+
+
+INSTALL
+=======
+To install mongod as a service, you need to run the following command:
+/sbin/chkconfig mongod on
+
+To check that mongo has successfully been installed as a service run the following:
+
+/sbin/chkconfig --list | grep mongod
+
+If all has gone correctly, you should see the following line (or something similar):
+
+mongod          0:off   1:off   2:on    3:on    4:on    5:on    6:off
+
+
+RESOURCES
+=========
+http://www.mongodb.org/display/DOCS/Starting+and+Stopping+Mongo
+
+
