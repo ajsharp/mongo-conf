@@ -14,6 +14,10 @@ line options here, rather than modifying the init script.
 
 INSTALL
 =======
+The easy way: from the repo root, simply run ./installer
+
+Or, if you prefer to do it manually:
+
 To install mongod as a service, you need to run the following command:
 /sbin/chkconfig mongod on
 
