@@ -8,6 +8,6 @@ cp ./etc/mongodb.conf /etc/mongodb.conf
 
 echo "Installing mongod as a service"
 # Install mongod as a service
-launchctl -w load /Library/LaunchDaemons/com.mongodb.mongod.plist
+launchctl load -w /Library/LaunchDaemons/com.mongodb.mongod.plist
 
 echo "Installer complete!"
