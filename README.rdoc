@@ -13,10 +13,9 @@ line options here, rather than modifying the init script.
 = Install
 
 == Linux
-1. Create the data directory by running the following: 
-<tt>sudo mkdir -p /var/log/mongodb/data</tt>
+1. Create the data directory by running the following: <tt>sudo mkdir -p /var/log/mongodb/data</tt>
 
-2. Simply run <tt>sudo ./installer.linux</tt>
+2. Run the installer script: <tt>sudo ./installer.linux</tt>
 
 3. To start it up: <tt>sudo /etc/init.d/mongod start</tt>
 
