@@ -14,7 +14,9 @@ line options here, rather than modifying the init script.
 
 INSTALL
 =======
-The easy way: from the repo root, simply run ./installer
+On a Linux OS: from the repo root, simply run sudo ./installer.linux
+
+On OS X: from the repo root, run sudo ./installer.osx
 
 Or, if you prefer to do it manually:
 
