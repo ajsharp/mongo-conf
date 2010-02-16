@@ -12,6 +12,10 @@ line options here, rather than modifying the init script.
 
 = Install
 
+1. Go here and download the proper binary package for your OS: http://www.mongodb.org/display/DOCS/Downloads
+
+This script will not do this part of the process for you.
+
 == Linux
 1. Create the data directory by running the following: <tt>sudo mkdir -p /var/log/mongodb/data</tt>
 
