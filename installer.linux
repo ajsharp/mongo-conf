@@ -1,6 +1,6 @@
 
 # Copy the init script and config file
-echo "Copying init script to /etc/init.d/centos"
+echo "Copying init script to /etc/init.d/mongod"
 cp ./etc/init.d/mongod.centos /etc/init.d/mongod
 
 echo "Copying configuration file to /etc/mongodb.conf"
