@@ -14,20 +14,20 @@ line options here, rather than modifying the init script.
 
 == Linux
 1. Create the data directory by running the following: 
-+ sudo mkdir -p /var/log/mongodb/data +
+<tt>sudo mkdir -p /var/log/mongodb/data</tt>
 
-2. Simply run +sudo ./installer.linux+
+2. Simply run <tt>sudo ./installer.linux</tt>
 
-3. To start it up: +sudo /etc/init.d/mongod start+
+3. To start it up: <tt>sudo /etc/init.d/mongod start</tt>
 
 Or, if you prefer to do it manually:
 
 To install mongod as a service, you need to run the following command:
-+/sbin/chkconfig mongod on+
+<tt>/sbin/chkconfig mongod on</tt>
 
 To check that mongo has successfully been installed as a service run the following:
 
-+/sbin/chkconfig --list | grep mongod+
+<tt>/sbin/chkconfig --list | grep mongod</tt>
 
 If all has gone correctly, you should see the following line (or something similar):
 
@@ -35,10 +35,10 @@ mongod          0:off   1:off   2:on    3:on    4:on    5:on    6:off
 
 == OS X
 
-On OS X: from the repo root, run +sudo ./installer.osx+
+On OS X: from the repo root, run <tt>sudo ./installer.osx</tt>
 
 This will copy the .plist file for you to /Library/LaunchDaemons/ and 
-run launchctl -w load which will launch mongod
+run <tt>launchctl -w load which will launch mongod</tt>
 
 
 = RESOURCES
