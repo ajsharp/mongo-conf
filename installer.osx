@@ -1,0 +1,13 @@
+
+# Copy the init script and config file
+echo "Copying plist file to /Library/LaunchDaemons/com.mongodb.mongod.plist"
+cp ./Library/LaunchDaemons/com.mongodb.mongod.plist /Library/LaunchDaemons/
+
+echo "Copying configuration file to /etc/mongodb.conf"
+cp ./etc/mongodb.conf /etc/mongodb.conf 
+
+echo "Installing mongod as a service"
+# Install mongod as a service
+launchctl -w load /Library/LaunchDaemons/com.mongodb.mongod.plist
+
+echo "Installer complete!"
