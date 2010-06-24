@@ -1,5 +1,0 @@
-/etc/init.d/mongod stop
-cp -R ./bin/* /usr/local/bin/
-cp -R ./lib64/* /usr/local/lib64/
-cp -R ./include/* /usr/local/include/
-/etc/init.d/mongod start

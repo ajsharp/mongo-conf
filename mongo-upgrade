@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+lib = File.exists?('/usr/local/lib64') ? 'lib64' : 'lib'
+
+system "/etc/init.d/mongod stop"
+system "cp -R ./bin/* /usr/local/bin/"
+system "cp -R ./#{lib}/* /usr/local/#{lib}/"
+system "cp -R ./include/* /usr/local/include/"
+system "/etc/init.d/mongod start"
